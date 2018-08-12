@@ -58,21 +58,23 @@ class CreditCardSelection extends React.Component {
   render() {
     const { selection } = this.state;
     return (
-      <div
-        className="CreditCardSelection"
-        style={{ transform: `translateX(-${320 * selection}px)` }}
-        ref={this.container}
-      >
-        {CREDIT_CARDS.map((cc, i) => (
-          <CreditCard key={i} {...cc} selected={selection === i} />
-        ))}
-        {this.container.current && (
-          <SwipeListener
-            target={this.container.current}
-            onLeft={this.incrementSelection}
-            onRight={this.decrementSelection}
-          />
-        )}
+      <div className="CreditCardSelection">
+        <div
+          className="CreditCardSelection__container"
+          ref={this.container}
+          style={{ transform: `translateX(-${320 * selection}px)` }}
+        >
+          {CREDIT_CARDS.map((cc, i) => (
+            <CreditCard key={i} {...cc} selected={selection === i} />
+          ))}
+          {this.container.current && (
+            <SwipeListener
+              target={this.container.current}
+              onLeft={this.incrementSelection}
+              onRight={this.decrementSelection}
+            />
+          )}
+        </div>
       </div>
     );
   }
