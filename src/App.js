@@ -5,6 +5,9 @@ import "./App.scss";
 import Header from "./Header";
 import CreditCardSelection from "./CreditCardSelection";
 import Option from "./Option";
+import Slider from "./Slider";
+import ApplePay from "./ApplePay";
+import PayButton from "./PayButton";
 
 class App extends Component {
   render() {
@@ -16,13 +19,15 @@ class App extends Component {
           <Option
             label="Keep me logged in"
             name="keepLoggedIn"
-            input={<input type="checkbox" />}
+            input={<Slider />}
           />
           <Option
             label="E-mail"
             name="email"
             input={<input type="email" readOnly value="kevin.kipp@gmail.com" />}
           />
+          <ApplePay />
+          <PayButton amount="29" />
         </Phone>
       </div>
     );
