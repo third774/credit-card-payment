@@ -4,14 +4,16 @@
   justify-content: center;
   align-items: center;
   height: 180px;
-  width: 300px;
-  margin: 30px;
+  width: 280px;
+  margin: 20px;
   flex-shrink: 0;
   border-radius: 8px;
   color: white;
+  text-transform: uppercase;
   background: url(map.svg) no-repeat top left;
   background-size: contain;
-  transition: transform 0.4s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  box-shadow: 0 1px 8px 0 rgba(0, 0, 0, 0.8);
 }
 
 .CreditCard__map {
@@ -28,7 +30,6 @@
   position: absolute;
   right: 16px;
   top: 16px;
-  text-transform: uppercase;
   font-style: italic;
 }
 
@@ -37,11 +38,12 @@
   left: 16px;
   bottom: 16px;
   font-size: 0.8rem;
+  font-weight: 300;
 }
 
 .CreditCard__number {
   font-family: monospace;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   letter-spacing: 0.1rem;
 }
 
@@ -53,8 +55,10 @@
   right: 16px;
   bottom: 16px;
   font-size: 0.8rem;
+  font-weight: 300;
 }
 
 .CreditCard--selected {
-  transform: scale(1.2);
+  transform: scale(1.15);
+  box-shadow: 0 4px 18px 2px rgba(0, 0, 0, 0.8);
 }

@@ -39,15 +39,18 @@ class CreditCardSelection extends React.Component {
     setInterval(() => {
       const { selection } = this.state;
       this.setState({
-        selection: selection === CREDIT_CARDS.length ? 0 : selection + 1
+        selection: selection === CREDIT_CARDS.length - 1 ? 0 : selection + 1
       });
-    }, 1000);
+    }, 1500);
   }
 
   render() {
     const { selection } = this.state;
     return (
-      <div className="CreditCardSelection">
+      <div
+        className="CreditCardSelection"
+        style={{ transform: `translateX(-${320 * selection}px)` }}
+      >
         {CREDIT_CARDS.map((cc, i) => (
           <CreditCard key={i} {...cc} selected={selection === i} />
         ))}
