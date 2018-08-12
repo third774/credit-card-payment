@@ -13,7 +13,6 @@
   user-select: none;
   transition: all 0.5s ease-in-out;
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.8);
-  filter: brightness(80%);
 
   &:before {
     content: "";
@@ -88,7 +87,6 @@
 .CreditCard--selected {
   transform: scale(1.15);
   box-shadow: none;
-  filter: brightness(100%);
   &:after {
     opacity: 1;
   }
