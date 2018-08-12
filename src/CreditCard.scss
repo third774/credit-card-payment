@@ -1,18 +1,55 @@
 .CreditCard {
-  border: 1px solid gray;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 180px;
   width: 300px;
   margin: 30px;
   flex-shrink: 0;
+  border-radius: 8px;
+  color: white;
+  background: url(map.svg) no-repeat top left;
+  background-size: contain;
+}
+
+.CreditCard__map {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  fill: white;
 }
 
 .CreditCard__type {
+  position: absolute;
+  right: 16px;
+  top: 16px;
+  text-transform: uppercase;
+  font-style: italic;
 }
 
 .CreditCard__name {
+  position: absolute;
+  left: 16px;
+  bottom: 16px;
+  font-size: 0.8rem;
 }
 
 .CreditCard__number {
+  font-family: monospace;
+  font-size: 1.2rem;
+  letter-spacing: 0.1rem;
+}
+
+.CreditCard__number-section {
+  margin: 8px;
 }
 .CreditCard__expiration {
+  position: absolute;
+  right: 16px;
+  bottom: 16px;
+  font-size: 0.8rem;
 }
