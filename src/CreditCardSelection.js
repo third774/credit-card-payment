@@ -2,6 +2,7 @@ import React from "react";
 import CreditCard from "./CreditCard";
 
 import "./CreditCardSelection.scss";
+import SwipeListener from "./SwipeListener";
 
 const CREDIT_CARDS = [
   {
@@ -35,14 +36,24 @@ class CreditCardSelection extends React.Component {
     selection: 0
   };
 
+  container = React.createRef();
+
   componentDidMount() {
-    setInterval(() => {
-      const { selection } = this.state;
-      this.setState({
-        selection: selection === CREDIT_CARDS.length - 1 ? 0 : selection + 1
-      });
-    }, 1500);
+    // force update to re-render with container ref
+    this.forceUpdate();
   }
+
+  decrementSelection = () => {
+    this.setState({
+      selection: Math.max(this.state.selection - 1, 0)
+    });
+  };
+
+  incrementSelection = () => {
+    this.setState({
+      selection: Math.min(this.state.selection + 1, CREDIT_CARDS.length - 1)
+    });
+  };
 
   render() {
     const { selection } = this.state;
@@ -50,10 +61,18 @@ class CreditCardSelection extends React.Component {
       <div
         className="CreditCardSelection"
         style={{ transform: `translateX(-${320 * selection}px)` }}
+        ref={this.container}
       >
         {CREDIT_CARDS.map((cc, i) => (
           <CreditCard key={i} {...cc} selected={selection === i} />
         ))}
+        {this.container.current && (
+          <SwipeListener
+            target={this.container.current}
+            onLeft={this.incrementSelection}
+            onRight={this.decrementSelection}
+          />
+        )}
       </div>
     );
   }

@@ -5,8 +5,6 @@ import creditCards from "./creditCards.json";
 
 import "./CreditCard.scss";
 
-console.log(creditCards);
-
 const CreditCard = ({ type, number, name, expiration, selected }) => (
   <div
     className={classNames("CreditCard", {
