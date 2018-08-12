@@ -4,7 +4,7 @@ import "./Option.scss";
 
 const Option = ({ label, name, input }) => (
   <div className="Option">
-    <label for={name}>{label}</label>
+    <label htmlFor={name}>{label}</label>
     {React.cloneElement(input, { id: name })}
   </div>
 );
