@@ -35,6 +35,15 @@ class CreditCardSelection extends React.Component {
     selection: 0
   };
 
+  componentDidMount() {
+    setInterval(() => {
+      const { selection } = this.state;
+      this.setState({
+        selection: selection === CREDIT_CARDS.length ? 0 : selection + 1
+      });
+    }, 1000);
+  }
+
   render() {
     const { selection } = this.state;
     return (

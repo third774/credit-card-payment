@@ -11,6 +11,7 @@
   color: white;
   background: url(map.svg) no-repeat top left;
   background-size: contain;
+  transition: transform 0.4s ease-in-out;
 }
 
 .CreditCard__map {
