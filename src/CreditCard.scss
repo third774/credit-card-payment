@@ -14,11 +14,7 @@
   background-size: contain;
   box-shadow: 0 1px 8px 0 rgba(0, 0, 0, 0.8);
   user-select: none;
-  &,
-  * {
-    transition: all 0.5s ease-in-out;
-    filter: brightness(80%);
-  }
+  transition: all 0.5s ease-in-out;
 }
 
 .CreditCard__map {
@@ -67,8 +63,4 @@
 .CreditCard--selected {
   transform: scale(1.15);
   box-shadow: 0 6px 18px 2px rgba(0, 0, 0, 0.8);
-  &,
-  * {
-    filter: brightness(100%);
-  }
 }
