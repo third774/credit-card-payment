@@ -1,4 +1,5 @@
 import React from "react";
+import classNames from "classnames";
 
 import creditCards from "./creditCards.json";
 
@@ -6,8 +7,13 @@ import "./CreditCard.scss";
 
 console.log(creditCards);
 
-const CreditCard = ({ type, number, name, expiration }) => (
-  <div className="CreditCard" style={creditCards[type].styles}>
+const CreditCard = ({ type, number, name, expiration, selected }) => (
+  <div
+    className={classNames("CreditCard", {
+      "CreditCard--selected": selected
+    })}
+    style={creditCards[type].styles}
+  >
     <div className="CreditCard__type">{type}</div>
     <div className="CreditCard__name">{name}</div>
     <div className="CreditCard__number">

@@ -30,12 +30,21 @@ const CREDIT_CARDS = [
   }
 ];
 
-const CreditCardSelection = () => (
-  <div className="CreditCardSelection">
-    {CREDIT_CARDS.map((cc, i) => (
-      <CreditCard key={i} {...cc} />
-    ))}
-  </div>
-);
+class CreditCardSelection extends React.Component {
+  state = {
+    selection: 0
+  };
+
+  render() {
+    const { selection } = this.state;
+    return (
+      <div className="CreditCardSelection">
+        {CREDIT_CARDS.map((cc, i) => (
+          <CreditCard key={i} {...cc} selected={selection === i} />
+        ))}
+      </div>
+    );
+  }
+}
 
 export default CreditCardSelection;
