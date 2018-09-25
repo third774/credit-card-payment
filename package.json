@@ -1,6 +1,5 @@
 {
   "name": "credit-card-payment",
-  "homepage": "http://third774.github.io/credit-card-payment",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
